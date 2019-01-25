@@ -1,0 +1,23 @@
+syntax="proto3";
+
+service dispatcher {
+  rpc getURL(Option) returns (URL) {} 
+  rpc postURL(URLInfoMap) returns (Option) {}
+}
+
+message Option {
+
+}
+
+message URL {
+  string path = 1;
+}
+
+message URLs {
+  repeated URL url = 1;
+}
+
+message URLInfoMap {
+  map<string, string> urlmap = 1;
+}
+
